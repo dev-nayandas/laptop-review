@@ -12,7 +12,7 @@ const Review = () => {
     console.log(customers)
     return (
         <div>
-            <h1>This is Review page</h1>
+            <h1 className='mt-5'>Look what people say about this product</h1>
             {
                 customers.map(customer =><ReviewUI key={customer.id} customer={customer}></ReviewUI>)
             }
