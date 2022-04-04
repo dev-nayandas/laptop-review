@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Comment from '../Comment/Comment';
 import Dasboard from '../Dasboard/Dasboard';
 import Review from '../Reviews/Review';
 import ReviewUI from '../ReviewUI/ReviewUI';
@@ -10,7 +11,12 @@ import ReviewUI from '../ReviewUI/ReviewUI';
 
 
 const Home = () => {
-
+    const [comments , setComments] = useState([])
+    useEffect( () =>{
+        fetch('Reviews.json')
+        .then(res => res.json())
+        .then(data => setComments(data))
+    },[])
     return (
         <div>
             <h1 className='text-info mt-5'>Know the Best</h1>
@@ -26,11 +32,15 @@ const Home = () => {
                 </div>
             </div>
           
-            <Button variant="success" className='mb-5 mt-5'>Total Reviews 6</Button><br/>
+            <Button variant="success" className='mb-5 mt-5'>Total Reviews (6)</Button><br/>
+            
+            {
+                comments.slice(0,3).map(comment => <Comment key={comment.id} comment={comment}></Comment>)
+            }
+           
+            <a className='text-decoration-none bg-info p-3 rounded-pill ' href={'/reviews'}>See all Reviews</a>
             
            
-            <a className='text-decoration-none bg-info p-2 rounded-pill' href={'/reviews'}>See all Reviews</a>
-            
 
         </div>
        
