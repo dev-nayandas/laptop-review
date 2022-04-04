@@ -1,8 +1,16 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Dasboard from '../Dasboard/Dasboard';
+import Review from '../Reviews/Review';
+import ReviewUI from '../ReviewUI/ReviewUI';
+// import Review from '../Reviews/Review';
+
+// import ReviewUI from '../ReviewUI/ReviewUI';
 
 
 const Home = () => {
+
     return (
         <div>
             <h1 className='text-info mt-5'>Know the Best</h1>
@@ -17,8 +25,12 @@ const Home = () => {
 
                 </div>
             </div>
+          
             <Button variant="success" className='mb-5 mt-5'>Total Reviews 6</Button><br/>
-            <Button className='mt-5'>See all Reviews</Button>
+            
+           
+            <a className='text-decoration-none bg-info p-2 rounded-pill' href={'/reviews'}>See all Reviews</a>
+            
 
         </div>
        
