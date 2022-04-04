@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 
+
 const Comment = (props) => {
     const {name, id, img, rating, review } = props.comment
     return (
