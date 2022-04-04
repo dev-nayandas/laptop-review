@@ -1,5 +1,5 @@
 Project name : Laptop Reviewer
-Live Web site link: 
+Live Web site link: https://fastidious-pegasus-be7e6c.netlify.app/
 What I Have done in this website
 - This site is for compare laptop 
 - We can Buy latest product that match with your price
